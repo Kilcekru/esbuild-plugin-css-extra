@@ -15,7 +15,7 @@ export const CssExtraPlugin = (options?: Options): Plugin => ({
 		const modulesMap = new Map<string, Record<string, string>>();
 		const cssMap = new Map<string, string>();
 
-		const defaultProcessor = postcss(options?.plugins);
+		const defaultProcessor = postcss(options?.plugins ?? []);
 		const modulesProcessor = postcss([
 			postcssModules({
 				getJSON: (filePath, classNames) => {
