@@ -9,7 +9,7 @@ import postcssModules from "postcss-modules";
 
 const readFile = promisify(FS.readFile);
 
-export const CssExtraPlugin = (options?: Options): Plugin => ({
+export const cssExtraPlugin = (options?: CssExtraOptions): Plugin => ({
 	name: "css-extra",
 	setup: function (build) {
 		const modulesMap = new Map<string, Record<string, string>>();
@@ -89,7 +89,7 @@ export const CssExtraPlugin = (options?: Options): Plugin => ({
 	},
 });
 
-export interface Options {
+export interface CssExtraOptions {
 	/** */
 	filter?: RegExp;
 	/** */
